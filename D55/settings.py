@@ -26,7 +26,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://vast-woodland-25392.herokuapp.com/']
+ALLOWED_HOSTS = ['https://vast-woodland-25392.herokuapp.com/',
+                 'vast-woodland-25392.herokuapp.com'
+                 ]
 
 
 # Application definition
