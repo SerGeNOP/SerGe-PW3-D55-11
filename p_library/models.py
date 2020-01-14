@@ -3,7 +3,7 @@ from decimal import Decimal
   
   
 class Author(models.Model):  
-    full_name = models.TextField()  
+    full_name = models.CharField(max_length=30)
     birth_year = models.SmallIntegerField()  
     country = models.CharField(max_length=2)
     
