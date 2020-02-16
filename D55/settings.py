@@ -28,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['https://vast-woodland-25392.herokuapp.com/',
                  'vast-woodland-25392.herokuapp.com',
+                 '127.0.0.1',
+                 'localhost',
+                 '0.0.0.0',
                  ]
 
 
