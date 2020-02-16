@@ -44,4 +44,4 @@ class LendedBooks(models.Model):
     friend = models.ForeignKey(Friend, on_delete=models.CASCADE, related_name='friends')
     book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='books')
     date_lend_in = models.DateField(auto_now=False, auto_now_add=True)
-    date_lend_out = models.DateField(auto_now=False, auto_now_add=False, blank=True, editable=True)
+    date_lend_out = models.DateField(auto_now=False, auto_now_add=False, blank=True, editable=True, null=True)

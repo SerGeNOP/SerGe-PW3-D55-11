@@ -25,5 +25,5 @@ class FriendAdmin(admin.ModelAdmin):
 
 @admin.register(LendedBooks)
 class LendedBooksAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('friend', 'book', 'date_lend_in', 'date_lend_out')
 
