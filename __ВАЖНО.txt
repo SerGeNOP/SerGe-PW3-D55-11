@@ -1,6 +1,7 @@
 Если есть проблема с базой, то
 Надо из procfile убрать строку с loaddata. Потом деплой на heroku. Потом heroku run python manage.py loaddata data.xml.
-в data.xml заранее залить дапм (фикстуру вашей базы) командой - 
+в data.xml заранее залить дапм (фикстуру вашей базы) командой -
+python manage.py dumpdata p_library --format xml -o data.xml 
 
 надо заполнить параметр ALLOWED_HOSTS (на ваш проект на heroku)
 ALLOWED_HOSTS = ['vast-woodland-25392.herokuapp.com']
