@@ -30,3 +30,18 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Friend(models.Model):
+    name = models.CharField(max_length=30)
+    phone = models.CharField(max_length=15, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+
+class LendedBooks(models.Model):
+    friend = models.ForeignKey(Friend, on_delete=models.CASCADE, related_name='friends')
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='books')
+    date_lend_in = models.DateField(auto_now=False, auto_now_add=True)
+    date_lend_out = models.DateField(auto_now=False, auto_now_add=False, blank=True, editable=True)
