@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% block my_content %}
 
-<div class="table-responsive">
-    <table class="table table-bordered">
+<div class="container">
+    <table class="table table-bordered" width="900">
         {% for book in books %}
             <tr>
                 <td>{{ book.title }}</td>
