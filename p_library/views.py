@@ -6,10 +6,12 @@ from p_library.models import Book
 from p_library.models import Publisher
 from p_library.models import Author
 from p_library.forms import AuthorForm, BookForm
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, DetailView
 from django.urls import reverse_lazy
 from django.forms import formset_factory
 from django.http.response import HttpResponseRedirect
+from django.utils import timezone
+from django.views.generic.detail import DetailView
 
 
 def books_list(request):
@@ -22,6 +24,14 @@ def index(request):
     books = Book.objects.all()
     biblio_data = {
         "title": "мою библиотеку",
+        "books": books,
+    }
+    return HttpResponse(template.render(biblio_data, request))
+
+def hometask(request):
+    template = loader.get_template('hometask.html')
+    books = Book.objects.all()
+    biblio_data = {
         "books": books,
     }
     return HttpResponse(template.render(biblio_data, request))
@@ -109,3 +119,19 @@ def books_authors_create_many(request):
         author_formset = AuthorFormSet(prefix='authors')
         book_formset = BookFormSet(prefix='books')
     return render(request, 'manage_books_authors.html', {'author_formset': author_formset, 'book_formset': book_formset})
+
+
+
+class PublisherDetailView(DetailView):
+
+    model = Publisher
+    template_name = 'publisher_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["now"] = timezone.now()
+        return context
+
+class PublisherList(ListView):
+    model = Publisher
+    template_name = 'publisher_list.html'

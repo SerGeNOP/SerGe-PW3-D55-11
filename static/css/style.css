@@ -1,0 +1,117 @@
+html,
+body {
+    margin: 0;
+    background-color: #F6F2F2;
+    height: 100%;
+}
+
+.header-style {
+	display: flex;
+	width: 1249px;
+	min-height: 89px;
+	margin: 29px 0 102px 164px;
+	background-color: #000000;
+	}
+
+.header-style > ul {
+	display: flex; 
+	justify-content: flex-start;
+	background-color: #000000;
+	margin: 0 200px 0 358px;
+	padding: 0;
+}
+
+.header-style li {
+	display: flex;
+	list-style: none;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+.header-style li a {
+		text-decoration: none;
+	    font-family: Open Sans;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 14px;
+		letter-spacing: 0.49px;
+		text-transform: uppercase;
+		color: #E0E0E0;
+		margin-top: 39px;
+}	
+/*выставляем кнопки меню на точные места */
+.header-style li:nth-of-type(1) {
+	padding: 0 23px 0 23px;
+}
+
+.header-style li:nth-of-type(2) {
+	padding: 0 34px 0 39px;
+}
+
+.header-style li:nth-of-type(3) {
+	padding: 0 13px 0 13px;
+}
+
+.header-style li:nth-of-type(4) {
+	padding: 0 35px 0 40px;
+}
+
+.header-style li:hover { background-color: #FF3F40; }
+
+.intro-wrapper {
+	display: flex;
+	width: 1250px;
+	height: 359px;
+	margin: 101px 0 0 164px;
+	background: #F6F2F2;
+	justify-content: space-between;
+}
+
+.intro > h1 {
+	width: 618px;
+	height: 117px;
+	margin: -9px 0 34px -4px;
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 60px;
+	line-height: 72px;
+	color: #000000;
+	text-transform: uppercase;
+	display:block;
+}
+
+.footer-style {
+	display: flex;
+	justify-content: space-between;
+	width: 1586px;
+	min-height: 111px;
+	background-color: #313030;
+	position: absolute;
+	left: -8px;
+	/*bottom: 0;*/
+}
+
+.footer-style > p {
+	font-family: Open Sans, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 26px;
+	margin: 16px 0 0 172px;
+	display: flex;
+	align-items: center;
+	color: #B8B8B8;
+}
+
+.social-icons {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin: 20.5px 156px 0 0;
+}
+
+.social-icons > a {
+	padding: 0 5px;
+}

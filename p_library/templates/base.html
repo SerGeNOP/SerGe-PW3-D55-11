@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Библиотека</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'image/favicon.ico' %}">
+</head>
+<body>
+    <header>
+        <h1 class="header-name">БИБЛИОТЕКА</h1>
+        <div class="main-header">
+            <nav class="header-style">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Книжный фонд</a></li>
+                    <li><a href="#">О&nbsp;Нас</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        {% block my_content %}
+        {% endblock %}
+    </main>
+</body>
+    <footer class="footer-style">
+        <p>&copy;&nbsp;Copyright @MyBiblio 2020, All rights reserved.</p>
+        <div class="social-icons">
+          <a href="#"><img src="{% static 'image/Twitter_Rounded_Solid_icon-icons.com_61561.svg' %}" width="41" height="auto"></a>
+          <a href="#"><img src="{% static 'image/LinkedIn_Rounded_Solid_icon-icons.com_61559.svg' %}" width="41" height="auto"></a>
+          <a href="#"><img src="{% static 'image/Google_Rounded_Solid_icon-icons.com_61556.svg' %}" width="41" height="auto"></a>
+          <a href="#"><img src="{% static 'image/Facebook_Rounded_Solid_icon-icons.com_61562.svg' %}" width="41" height="auto"></a>
+        </div>
+    </footer>
+</html>

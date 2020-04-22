@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block my_content %}
+
+<div class="table-responsive">
+    <table class="table table-bordered">
+        {% for book in books %}
+            <tr>
+                <td>{{ book.title }}</td>
+                <td>{{ book.ISBN }}</td>
+                <td>{{ book.description }}</td>
+                <td>{{ book.year_release }}</td>
+                <td>{{ book.author.full_name }}</td>
+                <td>{{ book.author.country }}</td>
+                <td>{{ book.publisher.name }}</td>
+                <td>
+                    <a href="#">
+                    <img height="100" width="100"
+                     src="{{ book.cover.url }}" alt="" class="fit">
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
