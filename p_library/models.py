@@ -1,7 +1,18 @@
 from django.db import models
 from decimal import Decimal  
-  
-  
+from django.contrib.auth.models import User
+from django.core import validators
+
+
+class UserProfile(models.Model):
+    age = models.IntegerField()
+    email = models.CharField(max_length=30, validators=[validators.EmailValidator])
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+
+    def __str__(self):
+        return self.user.username
+
+
 class Author(models.Model):  
     full_name = models.CharField(max_length=30)
     birth_year = models.SmallIntegerField()  
@@ -58,6 +69,3 @@ class LendedBooks(models.Model):
     class Meta:
         verbose_name = 'Одолженная книга'
         verbose_name_plural = 'Одолженные книги'
-
-
-
